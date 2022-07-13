@@ -50,7 +50,7 @@ class LaboratoriaHeader extends HTMLElement {
 
     headerElement.appendChild(burgerElement);
 
-    const shadow = this.attachShadow({ mode: "open" });
+    const shadow = this.attachShadow({ mode: "closed" });
 
     const headElement = document.createElement("head");
     headElement.appendChild(styleElement);
