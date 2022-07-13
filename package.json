@@ -1,0 +1,24 @@
+{
+  "name": "laboratoria-ce-header",
+  "author": "Fares A. Akel C. <fares@laboratoria.la>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Laboratoria/laboratoria-ce-header"
+  },
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "prepublish": "npm run build"
+  },
+  "devDependencies": {
+    "vite": "^3.0.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.umd.js",
+  "unpkg": "dist/index.umd.js",
+  "module": "dist/index.esm.js"
+}
