@@ -14,7 +14,7 @@ It will register a new component, you can use it with
 This component expect 3 things:
 
 - A set of anchor tags for links
-- A property name for the button name
+- A property buttonname for the button buttonname
 - A property link to set the button link
 
 You can see an example use here:

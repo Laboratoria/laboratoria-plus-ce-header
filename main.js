@@ -22,7 +22,7 @@ class LaboratoriaHeader extends HTMLElement {
 
     headerElement.appendChild(navElement);
 
-    const buttonName = this.hasAttribute('name') ? this.getAttribute('name') : '/#';
+    const buttonName = this.hasAttribute('buttonname') ? this.getAttribute('buttonname') : '/#';
     const buttonLink = this.hasAttribute('link') ? this.getAttribute('link') : '/#';
     const buttonElement = document.createElement("button");
     buttonElement.textContent = buttonName;
