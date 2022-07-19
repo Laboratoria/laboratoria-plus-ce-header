@@ -99,8 +99,7 @@ select {
     text-align: center;
     margin-inline: auto;
     font-size: xx-large;
-    white-space: nowrap;
-    
+    white-space: nowrap;    
   }
 
 
@@ -155,6 +154,7 @@ select {
     height: 100%;
     margin-top: 5vh;
     margin-bottom: -5vh;
+    position: absolute;
   }
 
   header a {
@@ -188,7 +188,7 @@ select {
   }
 
   header select {
-    margin: unset;
+    margin-left: auto;
     transition: all 1s ease, background-color 0.5s;
   }
 }
