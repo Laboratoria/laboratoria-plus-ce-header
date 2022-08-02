@@ -5,7 +5,7 @@
     "type": "git",
     "url": "https://github.com/Laboratoria/laboratoria-ce-header"
   },
-  "version": "0.2.3",
+  "version": "0.3.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
