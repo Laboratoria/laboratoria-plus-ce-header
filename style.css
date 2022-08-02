@@ -1,3 +1,8 @@
+select::-ms-expand {
+  display: none;
+  /*FOR IE*/
+}
+
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -22,7 +27,8 @@ header nav {
   height: 100%;
 }
 
-header a, select {
+header a,
+select {
   float: left;
   display: block;
   color: #000;
@@ -84,24 +90,56 @@ button:active {
 }
 
 select {
-  border: none;
+  -webkit-appearance: none;
+  /*REMOVES DEFAULT CHROME & SAFARI STYLE*/
+  -moz-appearance: none;
+  /*REMOVES DEFAULT FIREFOX STYLE*/
+  border: 0 !important;
+  /*REMOVES BORDER*/
+
   background-color: #fff;
   font-size: large;
-  margin-right: 1vw;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  background-size: 40px 37px;
+  /*TO ACCOUNT FOR @2X IMAGE FOR RETINA */
 }
 
+/* 
+header nav select {
+  display: none;
+}
+*/
+
+
 @media screen and (max-width: 620px) {
-  header button {
+
+  button {
+    padding: 4px 32px;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px;
+  }
+
+  header select {
     display: none;
   }
 
-  header.opened nav button {
+  header.opened button {
+    display: none;
+  }
+
+  header.opened nav button,
+  header.opened nav select {
     float: none;
     display: block;
     text-align: center;
     margin-inline: auto;
     font-size: xx-large;
-    white-space: nowrap;    
+    white-space: nowrap;
+    margin-bottom: 5vh;
   }
 
 
@@ -163,6 +201,7 @@ select {
   header a {
     display: none;
   }
+
   header a.icon {
     float: right;
     display: block;
@@ -171,10 +210,12 @@ select {
   header.responsive {
     position: relative;
   }
+
   header.responsive .icon {
     right: 0;
     top: 0;
   }
+
   header.responsive nav a {
     float: none;
     display: block;
@@ -182,7 +223,7 @@ select {
     font-size: xx-large;
     white-space: nowrap;
     margin-bottom: 5vh;
-    
+
   }
 
   header.responsive select {

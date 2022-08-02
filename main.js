@@ -46,10 +46,16 @@ class LaboratoriaHeader extends HTMLElement {
       
     }
     
-    headerElement.appendChild(selectLang);
+    // headerElement.appendChild(selectLang);
     headerElement.appendChild(buttonElement);
-    navElement.appendChild(buttonElement)
 
+    
+    const buttonClone = buttonElement.cloneNode(true);
+    navElement.appendChild(buttonClone);
+
+    const selectClone = selectLang.cloneNode(true);
+    navElement.appendChild(selectClone);
+    
     const burgerFunction = () => {
       const x = headerElement;
       if (x.className === "closed") {
@@ -69,7 +75,7 @@ class LaboratoriaHeader extends HTMLElement {
 
     headerElement.appendChild(burgerElement);
 
-    const shadow = this.attachShadow({ mode: "closed" });
+    const shadow = this.attachShadow({ mode: "open" });
 
     const headElement = document.createElement("head");
     headElement.appendChild(styleElement);
