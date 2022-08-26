@@ -7,55 +7,74 @@ class LaboratoriaHeader extends HTMLElement {
     const styleElement = document.createElement("style");
     styleElement.textContent = style;
 
-    
+
     const headerElement = document.createElement("header");
     headerElement.className = "closed";
-    
+
     const logoElement = document.createElement("img");
     // logoElement.src = logo;
-    
+
     headerElement.appendChild(logoElement);
 
     const aElements = this.querySelectorAll("a");
     const navElement = document.createElement("nav");
-    aElements.forEach(a => {  navElement.appendChild(a) });
-    
+    aElements.forEach(a => { navElement.appendChild(a) });
+
     headerElement.appendChild(navElement);
-    
+
     const buttonName = this.hasAttribute('buttonname') ? this.getAttribute('buttonname') : '/#';
     const buttonLink = this.hasAttribute('link') ? this.getAttribute('link') : '/#';
     const buttonElement = document.createElement("button");
     buttonElement.textContent = buttonName;
     buttonElement.onclick = () => window.location.href = buttonLink;
 
-    const esLink = this.hasAttribute('eslink') ? this.getAttribute('eslink') : '/#';
-    const ptLink = this.hasAttribute('ptlink') ? this.getAttribute('ptlink') : '/#';
-    const enLink = this.hasAttribute('enlink') ? this.getAttribute('enlink') : '/#';
+    const availableLanguages = []
 
-    const selectLang = document.createElement("select");
-    selectLang.innerHTML = `
-      <option value="${esLink}">ES</option>
-      <option value="${ptLink}">PT</option>
-      <option value="${enLink}">EN</option>
-    `
-    
-
-    selectLang.onchange = () => {
-      const lang = selectLang.value;
-      window.location.href = lang;
-      
+    if (this.hasAttribute('eslink')) {
+      availableLanguages.push({
+        lang: 'ES',
+        link: this.getAttribute('eslink')
+      })
     }
-    
-    // headerElement.appendChild(selectLang);
-    headerElement.appendChild(buttonElement);
 
+    if (this.hasAttribute('enlink')) {
+      availableLanguages.push({
+        lang: 'EN',
+        link: this.getAttribute('enlink')
+      })
+    }
+
+    if (this.hasAttribute('ptlink')) {
+      availableLanguages.push({
+        lang: 'PT',
+        link: this.getAttribute('ptlink')
+      })
+    }
+
+    
+    headerElement.appendChild(buttonElement);
+    
     
     const buttonClone = buttonElement.cloneNode(true);
     navElement.appendChild(buttonClone);
-
-    const selectClone = selectLang.cloneNode(true);
-    navElement.appendChild(selectClone);
     
+    
+    if (availableLanguages.length > 0) {
+
+      const selectLang = document.createElement("select");
+      selectLang.innerHTML = availableLanguages.map(
+        lang =>
+          window.location.href.includes(lang.link) ?
+            `<option value="${lang.link}" selected>${lang.lang}</option>` :
+            `<option value="${lang.link}">${lang.lang}</option>`
+      )
+        .join('');
+
+      navElement.appendChild(selectLang);
+
+      selectLang.onchange = () => window.location.href = selectLang.value;
+    }
+
     const burgerFunction = () => {
       const x = headerElement;
       if (x.className === "closed") {

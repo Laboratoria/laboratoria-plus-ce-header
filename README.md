@@ -18,6 +18,12 @@ This component expect 4 things:
 - A property link to set the button link
 - Three properties to set langs: esLink, ptLink, enLink
 
+If no lang properties are included, the lang selector will not be rendered.
+
+The current lang will depend on the window.location url.
+
+Any link can be absolute or relative.
+
 You can see an example use here:
 
 ```HTML
