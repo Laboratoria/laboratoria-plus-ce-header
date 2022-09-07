@@ -18,7 +18,18 @@ class LaboratoriaHeader extends HTMLElement {
 
     const aElements = this.querySelectorAll("a");
     const navElement = document.createElement("nav");
-    aElements.forEach(a => { navElement.appendChild(a) });
+    aElements.forEach(a => navElement.appendChild(a));
+
+    window.addEventListener('hashchange', () => {
+      aElements.forEach(a => {
+      // add bold class if current url includes a.href
+      if (window.location.href.includes(a.href)) {
+        a.className = "bold";
+      } else {
+        a.className = "";
+      }
+    });
+    })
 
     headerElement.appendChild(navElement);
 
@@ -51,14 +62,14 @@ class LaboratoriaHeader extends HTMLElement {
       })
     }
 
-    
+
     headerElement.appendChild(buttonElement);
-    
-    
+
+
     const buttonClone = buttonElement.cloneNode(true);
     navElement.appendChild(buttonClone);
-    
-    
+
+
     if (availableLanguages.length > 0) {
 
       const selectLang = document.createElement("select");
