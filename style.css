@@ -58,10 +58,15 @@ header .icon {
   display: none;
 }
 
-img {
+header a:has(img) {
+  display: block;
+  padding: 14px 16px;
   height: 3vh;
-  content: url("laboratoria.svg");
   margin-inline: 15px;
+}
+
+img {
+  content: url("laboratoria.svg");
 }
 
 button {
@@ -158,8 +163,14 @@ header nav select {
     color: black;
   }
 
-  img {
+  header a:has(img) {
+    display: block;
     padding: 14px 16px;
+    width: 38.53px;
+    height: 20px;
+  }
+
+  img {
     width: 38.53px;
     height: 20px;
     content: url("laboratoria-responsive.svg");

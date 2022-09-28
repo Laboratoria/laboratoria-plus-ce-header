@@ -11,10 +11,13 @@ class LaboratoriaHeader extends HTMLElement {
     const headerElement = document.createElement("header");
     headerElement.className = "closed";
 
+    const logoLink = document.createElement("a");
+    logoLink.href = "https://www.laboratoria.la/";
     const logoElement = document.createElement("img");
     // logoElement.src = logo;
 
-    headerElement.appendChild(logoElement);
+    logoLink.appendChild(logoElement);
+    headerElement.appendChild(logoLink);
 
     const aElements = this.querySelectorAll("a");
     const navElement = document.createElement("nav");
