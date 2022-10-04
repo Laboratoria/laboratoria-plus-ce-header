@@ -58,6 +58,10 @@ header .icon {
   display: none;
 }
 
+#logo:hover {
+  background-color: unset;
+}
+
 header a:has(img) {
   display: block;
   padding: 14px 16px;
