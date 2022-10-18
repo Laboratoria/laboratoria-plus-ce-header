@@ -19,7 +19,6 @@ header {
   justify-content: space-between;
   overflow: hidden;
   background-color: white;
-  padding-inline: 10vw;
 }
 
 header nav {
@@ -126,8 +125,13 @@ header nav select {
 }
 */
 
+@media screen and (min-width: 1200px) {
+  header {
+    padding-inline: 10vw;
+  }
+}
 
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 768px) {
 
   button {
     padding: 4px 32px;
