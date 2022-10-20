@@ -222,6 +222,7 @@ header nav select {
   }
 
   header.opened svg {
+    margin-top: 10px;
     height: 4vh;
   }
 
