@@ -1,9 +1,9 @@
 {
-  "name": "laboratoria-ce-header",
+  "name": "laboratoria-plus-ce-header",
   "author": "Fares A. Akel C. <fares@laboratoria.la>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Laboratoria/laboratoria-ce-header"
+    "url": "https://github.com/Laboratoria/laboratoria-plus-ce-header"
   },
   "version": "0.5.7",
   "type": "module",
