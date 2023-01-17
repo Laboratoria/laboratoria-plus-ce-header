@@ -19,7 +19,7 @@ header {
   justify-content: space-between;
   overflow: hidden;
   background-color: #F7F4EC;
-  border-bottom: 1px solid #000000;
+  /* border-bottom: 1px solid #000000; */
 }
 
 header nav {
