@@ -18,7 +18,8 @@ header {
   align-items: center;
   justify-content: space-between;
   overflow: hidden;
-  background-color: white;
+  background-color: #F7F4EC;
+  border-bottom: 1px solid #000000;
 }
 
 header nav {
@@ -42,10 +43,11 @@ select {
 }
 
 header a:hover {
-  background-color: #ddd;
+  /* background-color: #ddd;
   color: black;
   border-radius: 4px;
-  transition: all 0.2s ease;
+  transition: all 0.2s ease; */
+  font-weight: bold;
 }
 
 header a.active {
@@ -55,6 +57,10 @@ header a.active {
 
 header .icon {
   display: none;
+}
+
+#logo {
+  margin-top: 5px;
 }
 
 #logo:hover {
@@ -68,20 +74,20 @@ header a:has(img) {
 }
 
 img {
-  content: url("laboratoria.svg");
+  content: url("laboratoriaplus.svg");
 }
 
 button {
   background-color: #000;
   border: none;
-  color: white;
+  color: #F7F4EC;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
   margin: 10px;
-  border-radius: 4px;
+  border-radius: 40px;
   white-space: nowrap;
 }
 
@@ -90,13 +96,33 @@ header nav button {
 }
 
 button:hover {
-  background-color: #ffe521;
+  background-color: #56F89A;
   color: black;
   transition: all 0.2s ease;
 }
 
 button:active {
-  background-color: #ffe521;
+  background-color: #56F89A;
+  color: black;
+}
+
+#login {
+  background-color: #F7F4EC;
+  color: black;
+  border: 2px solid #000;
+  border-radius: 40px;
+  white-space: nowrap;
+}
+
+#login:hover {
+  background-color: black;
+  color: #F7F4EC;
+  border-color: black;
+  transition: all 0.2s ease;
+}
+
+#login:active {
+  background-color: black;
   color: black;
 }
 
@@ -138,6 +164,7 @@ header nav select {
     display: inline-block;
     font-size: 16px;
     margin: 10px;
+    display: none;
   }
 
   header select {
@@ -170,6 +197,10 @@ header nav select {
     width: 38.53px;
   }
 
+  header.closed #burger {
+    margin-top: 5px;
+  }
+
   header #burger:hover {
     background-color: unset;
     color: black;
@@ -179,14 +210,15 @@ header nav select {
     display: block;
     padding: 14px 16px;
     width: 38.53px;
-    height: 20px;
+    /* height: 20px; */
     margin-right: auto;
+    margin-top: 5px;
   }
 
   img {
-    width: 38.53px;
+    /* width: 38.53px; */
     height: 20px;
-    content: url("laboratoria-responsive.svg");
+    content: url("laboratoriaplus.svg");
     transition: all 0.5s ease, background-color 0.5s;
   }
 
@@ -207,12 +239,12 @@ header nav select {
   }
 
   .closed {
-    background-color: #fff;
+    background-color: #F7F4EC;
     max-height: 10vh;
   }
 
   .opened {
-    background-color: #ffe521;
+    background-color: #F7F4EC;
     height: 100vh;
     max-height: 100vh;
   }
