@@ -57,16 +57,6 @@ class LaboratoriaHeader extends HTMLElement {
 
     headerElement.appendChild(loginElement);
 
-
-    const buttonClone = buttonElement.cloneNode(true);
-    const loginClone = loginElement.cloneNode(true);
-
-    buttonClone.onclick = () => window.location.href = buttonLink;
-    loginClone.onclick = () => window.location.href = loginLink;
-
-    navElement.appendChild(buttonClone);
-    navElement.appendChild(loginClone);
-
     const burgerFunction = () => {
       const x = headerElement;
       if (x.className === "closed") {
@@ -80,6 +70,21 @@ class LaboratoriaHeader extends HTMLElement {
         `;
       }
     }
+
+    const buttonClone = buttonElement.cloneNode(true);
+    const loginClone = loginElement.cloneNode(true);
+
+    buttonClone.onclick = () => {
+      window.location.href = buttonLink
+      burgerFunction();
+    };
+    loginClone.onclick = () => {
+      window.location.href = loginLink;
+      burgerFunction();
+    }
+
+    navElement.appendChild(buttonClone);
+    navElement.appendChild(loginClone);
 
     const burgerElement = document.createElement("a");
     burgerElement.id = "burger";
