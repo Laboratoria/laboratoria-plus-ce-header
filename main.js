@@ -27,38 +27,43 @@ class LaboratoriaHeader extends HTMLElement {
 
     window.addEventListener('hashchange', () => {
       aElements.forEach(a => {
-      // add bold class if current url includes a.href
-      if (window.location.href.includes(a.href)) {
-        a.className = "bold";
-      } else {
-        a.className = "";
-      }
-    });
+        // add bold class if current url includes a.href
+        if (window.location.href.includes(a.href)) {
+          a.className = "bold";
+        } else {
+          a.className = "";
+        }
+      });
     })
 
     headerElement.appendChild(navElement);
 
     const buttonName = this.hasAttribute('buttonname') ? this.getAttribute('buttonname') : '/#';
     const buttonLink = this.hasAttribute('link') ? this.getAttribute('link') : '/#';
+
     const buttonElement = document.createElement("button");
-    
     buttonElement.id = "navButton";
     buttonElement.textContent = buttonName;
     buttonElement.onclick = () => window.location.href = buttonLink;
 
     headerElement.appendChild(buttonElement);
 
-    const loginElement = document.createElement("button");
     const loginLink = this.hasAttribute('loginlink') ? this.getAttribute('loginlink') : '/#';
+
+    const loginElement = document.createElement("button");
+    loginElement.id = "login";
     loginElement.textContent = "Login";
     loginElement.onclick = () => window.location.href = loginLink;
-    loginElement.id = "login";
 
     headerElement.appendChild(loginElement);
 
 
     const buttonClone = buttonElement.cloneNode(true);
     const loginClone = loginElement.cloneNode(true);
+
+    buttonClone.onclick = () => window.location.href = buttonLink;
+    loginClone.onclick = () => window.location.href = loginLink;
+
     navElement.appendChild(buttonClone);
     navElement.appendChild(loginClone);
 
