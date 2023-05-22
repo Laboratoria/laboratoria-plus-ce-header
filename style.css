@@ -39,10 +39,10 @@ select {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 16px;
 }
 
-header a:hover {
+header a:hover, .dropdown:hover .dropbtn {
   /* background-color: #ddd;
   color: black;
   border-radius: 4px;
@@ -86,7 +86,7 @@ button {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 10px;
+  margin-inline: 10px;
   border-radius: 40px;
   white-space: nowrap;
 }
@@ -151,6 +151,61 @@ header nav select {
 }
 */
 
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: #000;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+  display: block;
+}
+
+/* Add a red background color to navbar links on hover */
+/* nav a:hover, .dropdown:hover .dropbtn {
+  background-color: black;
+  color: white;
+} */
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  color: #FF50F5;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
 @media screen and (min-width: 1200px) {
   header {
     padding-inline: 10vw;
@@ -158,6 +213,10 @@ header nav select {
 }
 
 @media screen and (max-width: 768px) {
+
+  .dropdown {
+    display: none;
+  }
 
   button {
     padding: 4px 32px;
@@ -206,7 +265,7 @@ header nav select {
     color: black;
   }
 
-  header a:has(img) {
+  #logo {
     display: block;
     padding: 14px 16px;
     width: 38.53px;
@@ -217,14 +276,14 @@ header nav select {
 
   img {
     /* width: 38.53px; */
-    height: 20px;
+    /* height: 20px; */
     content: url("laboratoriaplus.svg");
     transition: all 0.5s ease, background-color 0.5s;
   }
 
   header.opened img {
-    margin-top: 10px;
-    height: 25px;
+    /* margin-top: 10px; */
+    /* height: 20px; */
   }
 
   header {
@@ -254,7 +313,7 @@ header nav select {
   }
 
   header.opened svg {
-    margin-top: 10px;
+    /* margin-top: 10px; */
     height: 4vh;
   }
 

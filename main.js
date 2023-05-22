@@ -7,7 +7,6 @@ class LaboratoriaHeader extends HTMLElement {
     const styleElement = document.createElement("style");
     styleElement.textContent = style;
 
-
     const headerElement = document.createElement("header");
     headerElement.className = "closed";
 
@@ -23,6 +22,36 @@ class LaboratoriaHeader extends HTMLElement {
 
     const aElements = this.querySelectorAll("a");
     const navElement = document.createElement("nav");
+
+
+    const availablePrograms = [
+      { name: "Liderazgo y Autoconocimiento", link: "/liderazgo" },
+      { name: "Effective Management", link: "/effective-management" },
+      { name: "Liderando Equipos", link: "/liderando-equipos" },
+      // { name: "Toma de Decisiones Basadas en Datos", link: "" },
+      // { name: "Productividad y desempeño", link: "" },
+      // { name: "Comunicación Efectiva", link: "" },
+    ]
+
+    const dropdown = document.createElement("div");
+    dropdown.className = "dropdown";
+    dropdown.innerHTML = `
+    <button class="dropbtn">Programas &#8964</button>
+    `;
+
+    const programs = document.createElement("div");
+    programs.className = "dropdown-content";
+    programs.innerHTML = availablePrograms.map(
+      program =>
+        `<a href="${program.link}">${program.name}</a>`
+    )
+      .join('');
+
+    dropdown.appendChild(programs);
+    navElement.appendChild(dropdown);
+
+    programs.onchange = () => window.location.href = programs.value;
+
     aElements.forEach(a => navElement.appendChild(a));
 
     window.addEventListener('hashchange', () => {
