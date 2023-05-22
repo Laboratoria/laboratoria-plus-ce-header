@@ -11,6 +11,13 @@ It will register a new component, you can use it with
 <laboratoria-header></laboratoria-header>
 ```
 
+NOTE: Import font in your HTML
+```HTML
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Albert Sans' rel='stylesheet'>
+</head>
+```
+
 This component expect 4 things:
 
 - A set of anchor tags for links
