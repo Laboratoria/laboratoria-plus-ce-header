@@ -34,7 +34,7 @@ Any link can be absolute or relative.
 You can see an example use here:
 
 ```HTML
-<laboratoria-header
+<laboratoria-plus-header
   name="My Button"
   link="#linkToSomewhere"
   esLink="/es"
@@ -44,5 +44,5 @@ You can see an example use here:
   <a href="#1">Link 1</a>
   <a href="#2">Link 2</a>
   <a href="#3">Link 3</a>
-</laboratoria-header>
+</laboratoria-plus-header>
 ```
