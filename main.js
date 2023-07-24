@@ -28,9 +28,9 @@ class LaboratoriaHeader extends HTMLElement {
       { name: "Liderazgo y Autoconocimiento", link: "/liderazgo" },
       { name: "Effective Management", link: "/effective-management" },
       { name: "Liderando Equipos", link: "/liderando-equipos" },
-      // { name: "Toma de Decisiones Basadas en Datos", link: "" },
+      { name: "Toma de Decisiones Basadas en Datos", link: "/toma-decisiones-basadas-datos" },
+      { name: "Comunicación e Influencia", link: "/comunicacion-influencia" },
       // { name: "Productividad y desempeño", link: "" },
-      // { name: "Comunicación Efectiva", link: "" },
     ]
 
     const dropdown = document.createElement("div");
