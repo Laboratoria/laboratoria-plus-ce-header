@@ -23,12 +23,11 @@ class LaboratoriaHeader extends HTMLElement {
     const aElements = this.querySelectorAll("a");
     const navElement = document.createElement("nav");
 
-
     const availablePrograms = [
       { name: "Liderazgo y Autoconocimiento", link: "/liderazgo" },
-      { name: "Effective Management", link: "/effective-management" },
+      // { name: "Effective Management", link: "/effective-management" },
       { name: "Liderando Equipos", link: "/liderando-equipos" },
-      { name: "Toma de Decisiones Basadas en Datos", link: "/toma-decisiones-basadas-datos" },
+      { name: "Estrategia Para la Toma de Decisiones", link: "/toma-decisiones" },
       { name: "Comunicación e Influencia", link: "/comunicacion-influencia" },
       // { name: "Productividad y desempeño", link: "" },
     ]
